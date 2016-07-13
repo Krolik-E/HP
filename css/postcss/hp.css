@@ -1,0 +1,871 @@
+*,
+*:after,
+*:before
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Futura; /* Имя шрифта */
+    src: url("../fonts/Futura.ttf"); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: FuturaBT; /* Имя шрифта */
+    src: url("../fonts/FUTURAN.ttf"); /* Путь к файлу со шрифтом */
+}
+
+html
+{
+    font-family: FuturaBT, sans-serif;
+    font-size: 10px;
+}
+
+button
+{
+    font-family: FuturaBT, sans-serif;
+
+    cursor: pointer;
+
+    border: none;
+    background: none;
+    outline: none;
+    white-space: nowrap;
+}
+
+ul
+{
+    list-style: none;
+}
+
+a
+{
+    cursor: pointer;
+    text-decoration: none;
+
+    color: inherit;
+}
+
+@comp page {
+    width: 100vw;
+    max-width:100%;
+
+    @desc header {
+        margin-bottom: 2rem;
+    }
+
+    @desc navigation {
+        padding: 0 10rem 0 9.7rem;
+        margin-bottom: 10rem;
+    }
+
+    @desc content {
+        margin-bottom: 9rem;
+    }
+
+    @desc about-us {
+        margin-bottom: 8rem;
+    }
+
+    @desc faq {
+        display: flex;
+        align-items: stretch;
+        padding: 0 11rem 0 9.5rem;
+        margin-bottom: 11.5rem;
+    }
+
+    @desc contacts {
+        padding: 9.5rem 0;
+        background: url('../img/contact-bg.png') no-repeat ;
+        background-size: cover;
+    }
+
+    @desc footer {
+        background-color: #1f1e1e;
+        padding: 1.5rem 9.7rem 1.5rem 9.7rem;
+    }
+}
+
+@comp header{
+    position: relative;
+    width: 100%;
+
+    @desc nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        padding: 3.3rem 7rem 0 9.7rem;
+    }
+}
+
+@comp nav{
+    display: flex;
+    align-items: center;
+
+    @desc menu {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 3.5rem 10rem;
+
+        @modifier active {
+            position: fixed;
+            background-color: #1f1e1e;
+            height: 100vh;
+            width: 34%;
+
+            & .hp-menu-containter__list {
+                display: block;
+            }
+
+            & .hp-menu-containter__social {
+                display: block;
+            }
+        }
+    @desc menu-btn {
+        margin-left: auto;
+    }
+}
+
+@comp menu-containter {
+    display: flex;
+    flex-flow: column wrap;
+
+    @desc btn {
+        align-self: flex-end;
+        margin-bottom: 10.5rem;
+    }
+
+    @desc list {
+        display: none;
+        margin-bottom: 7rem;
+    }
+
+    @desc social {
+        display: none;
+    }
+}
+
+@comp menu {
+    @desc item {
+        font-family: FuturaBT;
+        font-size: 2.4rem;
+        font-weight: 300;
+        color: #fff;
+        text-transform: uppercase;
+
+        @modifier active {
+            color: #cc0a27;
+        }
+    }
+}
+
+@comp menu-item {
+    padding: 1rem 0;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+@comp logo {
+    font-family: 'Megrim';
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+
+    @modifier header {
+        color: #fff;
+    }
+
+    @modifier main {
+        color: #000;
+    }
+}
+
+@comp nav-btn {
+    padding: .5rem;
+
+   @modifier header {
+        color: #fff;
+
+       &:hover {
+        color: #cb0a27;
+       }
+    }
+
+    @modifier hidden {
+        display: none;
+    }
+
+    @modifier close {
+        color: #484848;
+
+        &:hover {
+             color: #8a8a8a;
+        }
+    }
+
+    @modifier main {
+        color: #000;
+    }
+}
+
+@comp slider {
+    position: relative;
+
+    @desc nav {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}
+
+@comp slider-img-list {
+
+    @desc item {
+        display: none;
+
+        @modifier active {
+            display: block;
+            position: relative;
+
+        }
+    }
+
+    @desc img {
+        position: relative;
+        width: 100vw;
+        max-width:100%;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .4);
+        }
+    }
+
+    @desc description {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -25rem;
+        transform: translate(0, -62%);
+        width: 50rem;
+        text-align: center;
+    }
+}
+
+@comp slider-img {
+    width: 100%;
+    height: auto;
+}
+
+@comp project-description {
+    @desc title {
+        font-weight: 300;
+        font-size: 6rem;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 2rem;
+
+        @modifier mini {
+            font-size: 1.2rem;
+            font-weight: 500;
+            font-family: Futura;
+            line-height: 1.5rem;
+            margin-bottom: 0rem;
+        }
+    }
+
+    @desc info {
+        font-size: 2.4rem;
+        color: #fff;
+        font-weight: 300;
+        margin-bottom: 3rem;
+
+        @modifier mini {
+            font-size: 1.4rem;
+            color: #999;
+        }
+    }
+}
+
+@comp button {
+    @modifier start {
+        text-transform: uppercase;
+        color: #fff;
+        font-family: Futura;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 2rem 6rem;
+        background-color: #cb0a27;
+        border: .1rem solid #cb0a27;
+        letter-spacing: .2rem;
+
+        &:hover {
+            border-color: #fff;
+        }
+    }
+
+    @modifier prev {
+        background-color: #fff;
+        padding: .8rem 2.3rem;
+
+        &:hover {
+            background-color: #1f1e1e;
+            color: #ffffff;
+        }
+    }
+
+    @modifier next {
+        background-color: #fff;
+        padding: .8rem 2.3rem;
+
+        &:hover {
+            background-color: #1f1e1e;
+            color: #ffffff;
+        }
+    }
+
+    @modifier prev_gallery {
+        padding: 1.5rem 1rem;
+
+        &:hover .hp-button__icon_prev {
+            background-image: url('../img/arrow-left-hover.png');
+        }
+    }
+
+    @modifier next_gallery {
+        padding: 1.5rem 1rem;
+
+        &:hover .hp-button__icon_next {
+            background-image: url('../img/arrow-right-hover.png');
+        }
+    }
+
+    @desc icon {
+        @modifier prev {
+            padding: .5rem 3.5rem;
+            background: #fff url('../img/arrow-left.png') no-repeat center;
+        }
+
+        @modifier next {
+            padding: .5rem 3.5rem;
+            background: #fff url('../img/arrow-right.png') no-repeat center;
+        }
+    }
+
+    @modifier more {
+        color: #cb0a27;
+        font-family: Futura;
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        border: 1px solid #cb0a27;
+        background-color: #fff;
+        padding: 2.1rem 9.5rem;
+
+        &:hover {
+            background-color: #cb0a27;
+            color: #fff;
+        }
+    }
+
+    @modifier projects-nav {
+        padding: 1rem 1.5rem;
+        background-color: #1f1e1e;
+        color: #ffffff;
+
+        &:hover {
+            color: #1f1e1e;
+            background-color: #ffffff;
+        }
+    }
+
+    @modifier feedbacks {
+        background-color: #fff;
+        color: #cb0a27;
+        padding: .5rem 1rem;
+
+        &:hover {
+            background-color: #fff;
+            color: #cb0a27;
+        }
+    }
+
+    @modifier plane {
+        color: #cb0a27;
+        padding: 1rem;
+    }
+
+    @modifier submit {
+        padding: 2rem 6.5rem;
+        color: #fff;
+        border: .1rem solid #fff;
+        font-family: Futura;
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: #fff;
+            color: #cb0a27;
+        }
+    }
+}
+
+@comp slider-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @desc next {
+        @modifier slide {
+            background-color: #272727;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+@comp next-slide-mini{
+    display: flex;
+    align-items: center;
+
+    @desc description {
+        padding: 0 3.5rem 0 2rem;
+        align-self: flex-end;
+    }
+}
+
+@comp projects {
+    text-align: center;
+
+    @desc title {
+        color: #000;
+        font-size: 3rem;
+        font-family: Futura;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+    }
+
+    @desc description {
+        font-family: FuturaBT;
+        color: #777;
+        font-size: 16px;
+        font-weight: 300;
+        max-width: 37.5rem;
+        margin: 0 auto 2rem;
+    }
+}
+
+@comp project-gallery {
+    position: relative;
+
+    @desc nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 7rem 0 9.7rem;
+    }
+}
+
+@comp gallery {
+    display: flex;
+    width: 100vw;
+    max-width:100%;
+    overflow: hidden;
+
+    @desc item {
+        padding-top: 4rem;
+
+        & .hp-gallery-card__description {
+            display: none;
+        }
+
+        @modifier active {
+            padding-top: 2rem;
+
+            & .hp-gallery-card__description {
+                text-align: left;
+                padding-left: 2.2rem;
+                display: block;
+            }
+        }
+    }
+}
+
+@comp gallery-card {
+    @desc title {
+        font-family: Futura;
+        padding-top: 1.2rem;
+        color: #010101;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+    }
+    
+    @desc imgs {
+        position: relative;
+    }
+
+    @desc info {
+        font-family: FuturaBT;
+        color: #777;
+        font-weight: 300;
+        font-size: 1.6rem;
+    }
+
+    @desc item-nav {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform: translate(0, -50%);
+    }
+}
+
+@comp slider-img-list {
+    width: 100vw;
+    max-width:100%;
+    overflow: hidden;
+}
+
+@comp about-us {
+    display: flex;
+    max-width: 174rem;
+    margin: 0 auto;
+
+    @desc img {
+        font-size: 0;
+
+        @modifier right {
+            order: 2;
+        }
+    }
+
+    @desc info {
+        margin: 0 13rem;
+    }
+}
+
+@comp about-us-info {
+    @desc title {
+        margin-top: 5rem;
+        font-size: 3rem;
+        font-weight: 500;
+        font-family: Futura;
+        text-transform: uppercase;
+        margin-bottom: 4.5rem;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -1.5rem;
+            left: 0;
+            width: 6rem;
+            border-bottom: .4rem solid #cb0a27;
+        }
+    }
+
+    @desc text {
+        color: #777;
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+@comp text-block {
+    flex: 1 0;
+
+    &:first-of-type {
+        margin-right: 6rem;
+    }
+
+    @desc title {
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: black;
+        font-family: Futura;
+        margin-bottom: 2.5rem;
+    }
+
+    @desc text {
+        color: #777;
+        font-size: 1.6rem;
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+    }
+
+    @desc feedbacks-list {
+        position: relative;
+    }
+
+    @desc feedbacks-list-nav {
+        position: absolute;
+        right: 0;
+        top: 5rem;
+    }
+}
+
+@comp feedbacks-list {
+    @desc item {
+        display: none;
+
+        @modifier active {
+            display: block;
+        }
+    }
+}
+
+@comp feedback {
+    text-align: center;
+
+    @desc img {
+        margin-bottom: 2rem;
+    }
+
+    @desc user-info {
+        margin-bottom: 3.5rem;
+        position: relative;
+
+        &:after {
+            content: '‘‘';
+            position: absolute;
+            bottom: -4.8rem;
+            left: 50%;
+            margin-left: -1.2rem;
+            color: #1f1e1e;
+            font-family: Futura;
+            font-size: 3.6rem;
+            font-weight: 700;
+        }
+    }
+
+    @desc user-name {
+        font-family: FuturaBT;
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+
+    @desc user-position {
+        color: #777;
+        font-family: FuturaBT;
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+
+    @desc content {
+        padding: 0 4.5rem 0 3rem;
+        text-align: left;
+        color: #777;
+        font-family: FuturaBT;
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+}
+
+@comp faq-list {
+    @desc item {
+        padding: 2.5rem 0 2.5rem 3rem;
+
+        @modifier active {
+            & .hp-faq__content {
+                display: block;
+            }
+
+            & .hp-faq__visible {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+@comp faq {
+    
+    @desc visible {
+        display: flex;
+        align-items: center;
+    }
+
+    @desc question {
+        flex-grow: 1;
+        color: #030501;
+        font-family: Futura;
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding-right: 2rem;
+    }
+    
+    @desc content {
+        display: none;
+    }
+
+    @desc text {
+        color: #444;
+        font-family: FuturaBT;
+        font-weight: 300;
+        font-size: 1.5rem;
+    }
+}
+
+@comp contact-form {
+    text-align: center;
+
+    @desc title {
+        font-size: 3rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #fff;
+        font-family: Futura;
+        margin-bottom: 2rem;
+    }
+
+    @desc description {
+        font-family: FuturaBT;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 300;
+        margin-bottom: 3.5rem;
+    }
+
+    @desc form {
+        max-width: 57rem;
+        margin: 0 auto;
+    }
+}
+
+@comp form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    @desc input {
+        flex: 1 17rem;
+        margin: 0 3rem 2.2rem 0;
+
+        @modifier last {
+            margin-right: 0rem;
+        }
+    }
+
+    @desc textarea {
+        flex: 2 57rem;
+    }
+}
+
+@comp form-input {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    outline: none;
+
+    &::-webkit-input-placeholder {
+        color: #777;
+        font-family: FuturaBT;
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+}
+
+@comp form-textarea {
+    width: 100%;
+    resize: none;
+    padding: 1.2rem 2rem;
+    height: 7rem;
+    outline: none;
+    margin-bottom: 2.5rem;
+
+    &::-webkit-input-placeholder {
+        color: #777;
+        font-family: FuturaBT;
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+}
+
+@comp footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @desc logo {
+        display: flex;
+        align-items: center;
+    }
+
+    @desc contacts {
+        display: flex;
+        align-items: center;
+        flex-flow: column wrap;
+    }
+}
+
+@comp footer-rights {
+    padding-left: .5rem;
+    color: #777;
+    font-family: FuturaBT;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+@comp phone-link {
+    font-family: FuturaBT;
+    font-weight: 300;
+    line-height: 2rem;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+@comp mail-link {
+    font-family: FuturaBT;
+    font-weight: 300;
+    line-height: 2rem;
+    color: #999;
+    font-size: 1.4rem;
+}
+
+@comp social {
+    display: flex;
+
+    @desc item {
+        margin-right: 1.5rem;
+    }
+}
+
+@comp social-icon {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    border: .1rem solid #777676;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 1.2rem;
+    color: #fff;
+
+    @modifier header {
+        &:hover {
+            background-color: #cb0a27;
+            color: #fff;
+            border: .1rem solid #cb0a27;
+        }
+    }
+}
