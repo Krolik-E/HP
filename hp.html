@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hot peppers">
     <title>Hot Peppers</title>
     <link href='https://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -82,7 +84,7 @@
                             <ul class="hp-slider-img-list">
                                 <li class="hp-slider-img-list__item hp-slider-img-list__item_active">
                                     <div class="hp-slider-img-list__img">
-                                        <img class="hp-slider-img" src="img/slide1-img.png">
+                                        <img class="hp-slider-img" src="img/slide1-img.png" alt="Slide1">
                                     </div>
                                     <div class="hp-slider-img-list__description">
                                         <section class="hp-project-description">
@@ -107,7 +109,7 @@
                                 </div>
                                 <div class="hp-slider-nav__next hp-slider-nav__next_slide">
                                     <div class="hp-next-slide-mini">
-                                        <img class="hp-next-slide-mini__img" src="img/slide2-mini.png">
+                                        <img class="hp-next-slide-mini__img" src="img/slide2-mini.png" alt="Slide2-mini">
                                         <div class="hp-next-slide-mini__description">
                                             <section  class="hp-project-description hp-project-description_mini">
                                                 <h1 class="hp-project-description__title hp-project-description__title_mini">
@@ -161,7 +163,7 @@
                             <ul class="hp-gallery">
                                 <li class="hp-gallery__item">
                                     <section class="hp-gallery-card">
-                                        <img class="hp-gallery-card__img" src="img/project1.png">
+                                        <img class="hp-gallery-card__img" src="img/project1.png" alt="pr1">
                                         <div class="hp-gallery-card__description">
                                             <h3 class="hp-gallery-card__title"></h3>
                                             <p class="hp-gallery-card__info"></p>
@@ -187,7 +189,7 @@
                                             </div>
                                             <ul class="hp-card-imgs-list">
                                                 <li class="hp-card-imgs-list__item">
-                                                    <img class="hp-card-imgs-list__item-img" src="img/project2.png">
+                                                    <img class="hp-card-imgs-list__item-img" src="img/project2.png" alt="pr2">
                                                 </li>
                                             </ul>
                                         </div>
@@ -199,7 +201,7 @@
                                 </li>
                                 <li class="hp-gallery__item">
                                     <section class="hp-gallery-card">
-                                        <img class="hp-gallery-card__img" src="img/project3.png">
+                                        <img class="hp-gallery-card__img" src="img/project3.png"  alt="pr3">
                                         <div class="hp-gallery-card__description">
                                             <h3 class="hp-gallery-card__title"></h3>
                                             <p class="hp-gallery-card__info"></p>
@@ -208,7 +210,7 @@
                                 </li>
                                 <li class="hp-gallery__item">
                                     <section class="hp-gallery-card">
-                                        <img class="hp-gallery-card__img" src="img/project4.png">
+                                        <img class="hp-gallery-card__img" src="img/project4.png"  alt="pr4">
                                         <div class="hp-gallery-card__description">
                                             <h3 class="hp-gallery-card__title"></h3>
                                             <p class="hp-gallery-card__info"></p>
@@ -217,7 +219,7 @@
                                 </li>
                                 <li class="hp-gallery__item">
                                     <section class="hp-gallery-card">
-                                        <img class="hp-gallery-card__img" src="img/project3.png">
+                                        <img class="hp-gallery-card__img" src="img/project3.png" alt="pr5">
                                         <div class="hp-gallery-card__description">
                                             <h3 class="hp-gallery-card__title"></h3>
                                             <p class="hp-gallery-card__info"></p>
@@ -226,7 +228,7 @@
                                 </li>
                                 <li class="hp-gallery__item">
                                     <section class="hp-gallery-card">
-                                        <img class="hp-gallery-card__img" src="img/project4.png">
+                                        <img class="hp-gallery-card__img" src="img/project4.png"  alt="pr6">
                                         <div class="hp-gallery-card__description">
                                             <h3 class="hp-gallery-card__title"></h3>
                                             <p class="hp-gallery-card__info"></p>
@@ -242,7 +244,7 @@
         <div class="hp-page__about-us">
             <div class="hp-about-us">
                 <div class="hp-about-us__img hp-about-us__img_right">
-                    <img class="hp-about-us-img" src="img/about-us1.png">
+                    <img class="hp-about-us-img" src="img/about-us1.png"  alt="our team">
                 </div>
                 <div class="hp-about-us__info">
                     <div class="hp-about-us-info">
@@ -260,7 +262,7 @@
             </div>
             <div class="hp-about-us">
                 <div class="hp-about-us__img">
-                    <img class="hp-about-us-img" src="img/about-us2.png">
+                    <img class="hp-about-us-img" src="img/about-us2.png"  alt="our goals">
                 </div>
                 <div class="hp-about-us__info">
                     <div class="hp-about-us-info">
@@ -430,7 +432,7 @@
             <footer class="hp-footer">
                 <div class="hp-footer__logo">
                     <a class="hp-logo-link">
-                        <img class="hp-logo-link__img" src="img/logo.png">
+                        <img class="hp-logo-link__img" src="img/logo.png"  alt="logo">
                     </a>
                     <span class="hp-footer-rights">&#169 2016. All rights reserved</span>
                 </div>
@@ -462,7 +464,6 @@
     </div>
     <script>
            document.querySelector('.hp-menu-containter__btn').addEventListener('click', function () {
-               debugger;
                var btns = document.querySelectorAll('.hp-nav-btn');
                for (var i = 0; i<btns.length; i++) {
                    btns[i].classList.toggle('hp-nav-btn_hidden');
